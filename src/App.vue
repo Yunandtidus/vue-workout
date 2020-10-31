@@ -14,24 +14,17 @@
     </v-app-bar>
 
     <v-main>
-      <WorkoutConfigurer />
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import WorkoutConfigurer from './components/configurer/WorkoutConfigurer.vue';
 
 export default Vue.extend({
   name: 'App',
 
-  components: {
-    WorkoutConfigurer,
-  },
-
-  data: () => ({
-    //
-  }),
+  data: () => ({}),
 });
 </script>

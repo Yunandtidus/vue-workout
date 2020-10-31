@@ -19,15 +19,20 @@
         <Step3></Step3>
       </v-stepper-items>
     </v-stepper>
+    <v-row>
+      <v-col class="text-center">
+        <v-btn color="primary" @click="startWorkout">Commencer</v-btn>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script type="ts">
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import Step1 from './steps/Step1.vue';
-import Step2 from './steps/Step2.vue';
-import Step3 from './steps/Step3.vue';
+import Step1 from '@/components/configurer/steps/Step1.vue';
+import Step2 from '@/components/configurer/steps/Step2.vue';
+import Step3 from '@/components/configurer/steps/Step3.vue';
 
 @Component({
   components: {
@@ -36,7 +41,11 @@ import Step3 from './steps/Step3.vue';
     Step3,
   },
 })
-export default class WorkoutConfigurer extends Vue {}
+export default class WorkoutConfigurer extends Vue {
+  startWorkout() {
+    this.$router.push({ name: 'workout' });
+  }
+}
 </script>
 
 <style>
